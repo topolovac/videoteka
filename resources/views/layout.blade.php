@@ -38,8 +38,8 @@
 
             .navigation {
               padding-top:15px;
-              padding-bottom:15px;
-              float: right;
+              margin-bottom:60px;
+              text-align:right;
             }
           </style>
     </head>
@@ -48,10 +48,12 @@
           <div class="container">
 
             <div class="navigation">
-            @yield('navigation')
+              @yield('nav')
             </div>
 
-            @yield('content')
+            <div class="main">
+              @yield('content')
+            </div>
           </div>
 
 
