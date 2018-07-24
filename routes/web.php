@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController');
+Route::get('/', 'HomeController')->name('home');
 
-Route::resource('dashboard', 'DashboardController');
+Route::resource('dashboard', 'DashboardController')->names([
+  'index' => 'dashboard.index'
+]);

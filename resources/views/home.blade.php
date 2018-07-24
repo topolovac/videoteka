@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('navigation')
-  <a href="#" class="btn btn-primary">Dashboard</a>
+  <a href="{{route('dashboard.index')}}" class="btn btn-primary">Dashboard</a>
 @endsection
 
 @section('content')
