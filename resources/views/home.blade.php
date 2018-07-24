@@ -1,10 +1,10 @@
 @extends('layout')
 
-@section('content')
+@section('navigation')
+  <a href="#" class="btn btn-primary">Dashboard</a>
+@endsection
 
-      <div class="navigation">
-        <a href="#" class="btn btn-primary">Dashboard</a>
-      </div>
+@section('content')
       <div class="content homepage">
         <h1 id="main-title">Algebra Movies</h1>
 

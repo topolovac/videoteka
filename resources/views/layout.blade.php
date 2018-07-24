@@ -39,12 +39,18 @@
             .navigation {
               padding-top:15px;
               padding-bottom:15px;
+              float: right;
             }
           </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
           <div class="container">
+
+            <div class="navigation">
+            @yield('navigation')
+            </div>
+
             @yield('content')
           </div>
 
