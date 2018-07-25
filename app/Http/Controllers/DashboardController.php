@@ -122,6 +122,13 @@ class DashboardController extends Controller
 
     public function destroy($movie_id)
     {
-      return "Radi!";
+      $movie = Movie::find($movie_id);
+
+      try {
+        $movie_id = $movie->delete();
+        return redirect()->back();
+      } catch(Exception $e){
+        return redirect()->back();
+      }
     }
 }
