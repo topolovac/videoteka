@@ -7,18 +7,18 @@
 @section('content')
   <h1>Dashboard</h1>
 
-  <form>
+  <form action=" {{ route('dashboard.store') }} " method="post" enctype="multipart/form-data">
 
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="name">Movie name</label>
-        <input type="text" id="name" placeholder="Name" class="form-control">
+        <label>Movie name</label>
+        <input type="text" name="name" placeholder="Name" class="form-control">
       </div>
       <div class="form-group col-md-6">
-        <label for="name">Movie genre</label>
-        <select class="form-control">
+        <label>Movie genre</label>
+        <select name="genre" class="form-control">
           @foreach ($genres as $key)
-            <option>
+            <option value="{{$key['id']}}">
               {{$key['name']}} </h2>
             </option>
           @endforeach
@@ -28,8 +28,8 @@
 
     <div class="form-row">
       <div class="form-group col-md-3">
-        <label for="name">Year</label>
-        <select class="form-control">
+        <label>Year</label>
+        <select class="form-control" name="year">
           @for ($i=(int)date('Y'); $i >= 1900 ; $i--)
             <option>
               {{ $i }} </h2>
@@ -38,21 +38,47 @@
         </select>
       </div>
       <div class="form-group col-md-3">
-        <label for="name">Runtime</label>
-        <input type="number" name="name" placeholder="minutes" class="form-control">
+        <label>Runtime</label>
+        <input type="number" name="runtime" placeholder="minutes" class="form-control">
       </div>
       <div class="form-group col-md-6">
-        <label for="image">Image</label>
+        <label>Image</label>
         <input type="file" name="image" id="image-input" class="form-control-file">
       </div>
     </div>
+
     <div class="form-row">
       <div class="form-group col-md-12">
-        <input type="button" value="Add movie" class="btn btn-primary">
+        {{ csrf_field() }}
+        <button type="submit"class="btn btn-primary">Add movie</button>
       </div>
     </div>
   </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image</th>
+        <th scope="col">Title</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Runtime</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($movies as $movie)
+        <tr>
+          <td>{{$movie["id"]}}</td>
+          <td> <img src="images/{{$movie["image"]}}" height="100px" width="80px" alt=""> </td>
+          <td>{{$movie["title"]}}</td>
+          <td>{{$genres[$movie["genre_id"]]["name"]}}</td>
+          <td>{{$movie["runtime"]}}</td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
 @endsection
+
 
 @section('script')
   <script>

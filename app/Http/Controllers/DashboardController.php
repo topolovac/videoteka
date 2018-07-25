@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Exception;
 use App\models\Genre;
+use App\models\Movie;
 
 class DashboardController extends Controller
 {
@@ -15,8 +17,9 @@ class DashboardController extends Controller
     public function index()
     {
       $genres = Genre::all();
+      $movies = Movie::all();
 
-      return view('dashboard', ['genres' => $genres]);
+      return view('dashboard', ['genres' => $genres, 'movies' => $movies]);
     }
 
     /**
@@ -35,9 +38,47 @@ class DashboardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function fileUpload($request) {
+      $this->validate($request, [
+          'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      ]);
+
+      if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('/images');
+        $image->move($destinationPath, $name);
+
+        return $name;
+      }
+      return false;
+    }
+
     public function store(Request $request)
     {
-        //
+      $fileUploaded = $this->fileUpload($request);
+      if($fileUploaded){
+        $data = array(
+          'title' => trim($request->get('name')),
+          'genre_id' => trim($request->get('genre')),
+          'year' => trim($request->get('year')),
+          'runtime' => trim($request->get('runtime')),
+          'image' => $fileUploaded
+        );
+
+        //dd($data);
+
+        $movie = new Movie();
+        try {
+    			$movie_id = $movie->saveMovie($data);
+          return redirect()->back();
+    		} catch (Exception $e) {
+          return redirect()->back();
+    		}
+      } else {
+        return redirect()->back();
+      }
     }
 
     /**

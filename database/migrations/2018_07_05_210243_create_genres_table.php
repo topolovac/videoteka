@@ -18,10 +18,6 @@ class CreateGenresTable extends Migration
             $table->timestamps();
             $table->string('name');
         });
-
-        DB::table('genres')->insert([
-          'name' => ''
-        ])
     }
 
     /**
