@@ -67,8 +67,6 @@ class DashboardController extends Controller
           'image' => $fileUploaded
         );
 
-        //dd($data);
-
         $movie = new Movie();
         try {
     			$movie_id = $movie->saveMovie($data);
@@ -89,7 +87,7 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        //
+        return "show " . $id;
     }
 
     /**
@@ -100,7 +98,7 @@ class DashboardController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "Edit";
     }
 
     /**
@@ -121,8 +119,9 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+    public function destroy($movie_id)
     {
-        //
+      return "Radi!";
     }
 }

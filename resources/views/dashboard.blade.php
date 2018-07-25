@@ -63,16 +63,21 @@
         <th scope="col">Title</th>
         <th scope="col">Genre</th>
         <th scope="col">Runtime</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
       @foreach ($movies as $movie)
         <tr>
           <td>{{$movie["id"]}}</td>
-          <td> <img src="images/{{$movie["image"]}}" height="100px" width="80px" alt=""> </td>
+          <!-- <td> <img src="images/{{$movie["image"]}}" height="100px" width="80px" alt=""> </td> -->
+          <td> <img src="images/1532550858.jpg" height="100px" width="80px" alt=""> </td>
           <td>{{$movie["title"]}}</td>
           <td>{{$genres[$movie["genre_id"]]["name"]}}</td>
           <td>{{$movie["runtime"]}}</td>
+          <td>
+						<a href=" {{ route('dashboard.destroy','3') }} ">Delete</a>
+          </td>
         </tr>
       @endforeach
     </tbody>
