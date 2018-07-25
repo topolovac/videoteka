@@ -76,7 +76,7 @@
           <td>{{$genres[$movie["genre_id"]]["name"]}}</td>
           <td>{{$movie["runtime"]}}</td>
           <td>
-						<a href=" {{ route('dashboard.destroy','3') }} ">Delete</a>
+            <a href=" {{ route('dashboard.destroy',$movie['id']) }} " class="btn btn-danger btn-xs action_confirm" data-method="delete" data-token="{{ csrf_token() }}">Delete</a>
           </td>
         </tr>
       @endforeach
