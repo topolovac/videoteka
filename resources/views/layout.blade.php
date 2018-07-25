@@ -12,14 +12,16 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
         <style>
-            html, body {
-                background-color: #fff;
+
+            h1, h2, h3, h4, h5 {
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
-                height: 100vh;
-                margin: 0;
             }
 
             .homepage {
@@ -58,5 +60,7 @@
 
 
         </div>
+
+        @yield('script')
     </body>
 </html>
