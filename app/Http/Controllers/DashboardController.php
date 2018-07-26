@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Exception;
+use Session;
 use App\models\Genre;
 use App\models\Movie;
 
@@ -70,11 +71,15 @@ class DashboardController extends Controller
         $movie = new Movie();
         try {
     			$movie_id = $movie->saveMovie($data);
+          Session::flash('success','Added new movie with success.');
           return redirect()->back();
     		} catch (Exception $e) {
+          Session::flash('error','Failed to add new movie.');
           return redirect()->back();
     		}
       } else {
+        return 'di je slika';
+        Session::flash('error','Please upload movie image.');
         return redirect()->back();
       }
     }
@@ -126,8 +131,10 @@ class DashboardController extends Controller
 
       try {
         $movie_id = $movie->delete();
+        Session::flash('success','Movie deleted with success.');
         return redirect()->back();
       } catch(Exception $e){
+        Session::flash('error','Error deleting movie. Try again.');
         return redirect()->back();
       }
     }

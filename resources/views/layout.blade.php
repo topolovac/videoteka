@@ -23,11 +23,11 @@
             h1, h2, h3, h4, h5 {
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
             }
 
             .homepage {
               text-align: center;
+              margin-top: 150px;
             }
             .homepage a {
               font-size: 25px;
@@ -37,31 +37,38 @@
             }
             #main-title {
               font-size: 50px;
-              padding: 50px;
+              margin-bottom: 50px;
+              text-align: center;
             }
 
             .navigation {
-              padding-top:15px;
-              margin-bottom:60px;
+              padding: 15px;
               text-align:right;
             }
+
+            .movie-table {
+              margin-top: 350px;
+            }
+
+
           </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-          <div class="container">
 
-            <div class="navigation">
-              @yield('nav')
-            </div>
-
-            <div class="main">
-              @yield('content')
-            </div>
-          </div>
-
-
+      <div class="container">
+        <div class="navigation">
+          @yield('nav')
         </div>
+
+        <div>
+          <h1 id="main-title">@yield('title')</h1>
+        </div>
+
+        <div class="main">
+          @yield('content')
+        </div>
+      </div>
+
 
         @yield('script')
 
