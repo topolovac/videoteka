@@ -51,7 +51,9 @@
           @endforeach
         </div>
         <div class="center">
-          {{ $movies->links() }}
+          @if ($group == 'All movies')
+            {{ $movies->links() }}
+          @endif
         </div>
 
       @else
