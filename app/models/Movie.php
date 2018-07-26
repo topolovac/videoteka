@@ -13,6 +13,6 @@ class Movie extends Model
     }
 
     public function genre(){
-    return $this->belongsTo('App\models\Genre');
-  }
+      return $this->belongsTo('App\models\Genre');
+    }
 }

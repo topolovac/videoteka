@@ -57,7 +57,7 @@
               align-items: center;
             }
 
-            #latest-title {
+            .latest-title {
               margin-top: 85px;
               margin-bottom: 35px;
               text-align: center;
