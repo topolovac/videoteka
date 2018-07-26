@@ -14,3 +14,5 @@
 Route::resource('dashboard', 'DashboardController');
 
 Route::get('/', 'HomeController')->name('home');
+
+Route::get('/{letter}', 'HomeController@MoviesWithLetter')->name('home.letter');

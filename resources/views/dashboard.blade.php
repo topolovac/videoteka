@@ -84,7 +84,7 @@
               <td>{{$movie["id"]}}</td>
               <td> <img src="images/{{$movie["image"]}}" height="100px" width="80px" alt=""> </td>
               <td>{{$movie["title"]}}</td>
-              <td>{{$genres[$movie["genre_id"]]["name"]}}</td>
+              <td>{{$genres[$movie["genre_id"]-1]["name"]}}</td>
               <td>{{$movie["runtime"]}}</td>
               <td>
                 <a href=" {{ route('dashboard.destroy',$movie['id']) }} " class="btn btn-danger btn-xs action_confirm" data-method="delete" data-token="{{ csrf_token() }}">Delete</a>

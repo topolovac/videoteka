@@ -69,7 +69,6 @@
 
             .latest div {
               text-align: center;
-              border-bottom: 1px solid silver;
             }
 
             .latest-element h3, h5 {

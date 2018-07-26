@@ -20,17 +20,17 @@
         @endphp
         <ul>
           @foreach ($alphabet as $key)
-            <a href="{{$key}}">{{$key}}</a>
+            <a href=" {{ route('home.letter',$key) }} ">{{$key}}</a>
           @endforeach
         </ul>
       </div>
 
-      <h2 id="latest-title">Latest</h2>
+      <h2 id="latest-title"> {{ $group }} </h2>
       <div class="latest">
         @foreach ($movies as $movie)
           <div class="latest-element">
             <a href="#">
-              <img src="images/{{ $movie->image }}" width="180" height="220">
+              <img src="images/{{ $movie->image }}" width="140" height="180">
               <h3> {{ $movie->title }} ({{ $movie->year }}) </h3>
               <h5>{{ $movie->runtime }} min</h5>
             </a>
