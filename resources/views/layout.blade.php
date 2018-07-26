@@ -27,7 +27,7 @@
 
             .homepage {
               text-align: center;
-              margin-top: 150px;
+              margin-top: 50px;
             }
             .homepage a {
               font-size: 25px;
@@ -48,6 +48,39 @@
 
             .movie-table {
               margin-top: 350px;
+            }
+
+            .latest {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-gap: 30px;
+              align-items: center;
+            }
+
+            #latest-title {
+              margin-top: 85px;
+              margin-bottom: 35px;
+              text-align: center;
+            }
+
+            .latest a {
+              text-decoration: none;
+            }
+
+            .latest div {
+              text-align: center;
+              border-bottom: 1px solid silver;
+            }
+
+            .latest-element h3, h5 {
+              color: #333;
+              font-family: verdana;
+              font-weight: bold;
+            }
+
+            .latest-element img {
+              border-radius:8px;
+              border: 1px solid silver;
             }
 
 
