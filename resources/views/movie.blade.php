@@ -4,10 +4,10 @@
   <div class="container">
     <h1> {{$movie->title}} </h1>
     <img src="../images/{{$movie->image}}" width="250" height="300">
-  </div>
 
-  <div class="movie-info">
-    
+    <div class="movie-info">
+
+    </div>
   </div>
 @endsection
 

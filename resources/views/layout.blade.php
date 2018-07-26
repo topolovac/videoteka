@@ -87,6 +87,10 @@
               border: 1px solid silver;
             }
 
+            .center {
+              text-align: center;
+            }
+
 
           </style>
     </head>

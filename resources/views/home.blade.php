@@ -50,6 +50,10 @@
             </div>
           @endforeach
         </div>
+        <div class="center">
+          {{ $movies->links() }}
+        </div>
+
       @else
         <h1 class="latest-title">No movies with letter {{ $group }} </h1>
       @endif
