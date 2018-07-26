@@ -13,6 +13,8 @@
 
 Route::resource('dashboard', 'DashboardController');
 
+Route::get('movie/{id}', 'MovieController@index')->name('movie.index');
+
 Route::get('/', 'HomeController')->name('home');
 
 Route::get('/{letter}', 'HomeController@MoviesWithLetter')->name('home.letter');

@@ -42,7 +42,7 @@
         <div class="latest">
           @foreach ($movies as $movie)
             <div class="latest-element">
-              <a href="#">
+              <a href=" {{route('movie.index', $movie->id )}} ">
                 <img src="images/{{ $movie->image }}" width="140" height="180">
                 <h3> {{ $movie->title }} ({{ $movie->year }}) </h3>
                 <h5>{{ $movie->runtime }} min</h5>

@@ -82,6 +82,11 @@
               border: 1px solid silver;
             }
 
+            img {
+              border-radius:8px;
+              border: 1px solid silver;
+            }
+
 
           </style>
     </head>
