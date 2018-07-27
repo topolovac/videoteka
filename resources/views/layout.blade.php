@@ -43,7 +43,17 @@
 
             .navigation {
               padding: 15px;
-              text-align:right;
+              display: grid;
+              grid-template-columns: 4fr 1fr;
+            }
+
+            .navigation div {
+              align-self: center;
+              
+            }
+
+            .navigation a {
+              text-decoration: none;
             }
 
             .movie-table {
@@ -98,7 +108,14 @@
 
       <div class="container">
         <div class="navigation">
-          @yield('nav')
+          <div>
+            <h2>
+              <a href=" {{route('home')}} ">Home</a>
+            </h2>
+          </div>
+          <div>
+            @yield('nav')
+          </div>
         </div>
 
         <div>
