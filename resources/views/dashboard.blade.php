@@ -4,8 +4,6 @@
   <a href="{{route('home')}}">Back</a>
 @endsection
 
-@section('title') Dashboard @endsection
-
 @section('content')
     @if(Session::has('success'))
     <div class="alert alert-success" role="alert">
