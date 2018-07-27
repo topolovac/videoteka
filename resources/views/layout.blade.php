@@ -40,14 +40,19 @@
               text-align: center;
             }
 
+            .navigation * {
+              margin: 0;
+              padding: 0;
+            }
+
             .navigation {
-              padding: 15px;
+              margin-top:50px;
               display: inline-block;
             }
 
             .navigation h2 {
               display: inline-block;
-              padding: 15px;
+              margin-right: 50px;
             }
 
             .navigation a {
@@ -99,6 +104,35 @@
               text-align: center;
             }
 
+          @media (max-width:700px){
+            .navigation {
+              display: block;
+              text-align: center;
+            }
+            .navigation h2 {
+              margin: 0;
+              display: block;
+              text-align: center;
+            }
+
+            .homepage a {
+              padding: 0;
+              margin: 0;
+              font-size: 23px;
+            }
+          }
+
+          @media (max-width:600px){
+            .latest {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+
+          @media (max-width:450px){
+            .latest {
+              grid-template-columns: 1fr;
+            }
+          }
 
           </style>
 
