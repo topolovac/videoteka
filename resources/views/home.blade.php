@@ -1,10 +1,10 @@
 @extends('layout')
 
 @section('nav')
-  <a href="{{route('dashboard.index')}}" class="btn btn-primary">Dashboard</a>
+  <a href="{{route('dashboard.index')}}">Dashboard</a>
 @endsection
 
-@section('title') Algebra Movies @endsection
+
 
 @section('content')
 

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('nav')
-  <a href="{{route('home')}}" class="btn btn-primary">Back</a>
+  <a href="{{route('home')}}">Back</a>
 @endsection
 
 @section('title') Dashboard @endsection

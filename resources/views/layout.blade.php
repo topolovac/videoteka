@@ -3,9 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Laravel</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -43,13 +42,12 @@
 
             .navigation {
               padding: 15px;
-              display: grid;
-              grid-template-columns: 4fr 1fr;
+              display: inline-block;
             }
 
-            .navigation div {
-              align-self: center;
-              
+            .navigation h2 {
+              display: inline-block;
+              padding: 15px;
             }
 
             .navigation a {
@@ -103,19 +101,20 @@
 
 
           </style>
+
+          @yield('style')
+
     </head>
     <body>
 
       <div class="container">
         <div class="navigation">
-          <div>
             <h2>
               <a href=" {{route('home')}} ">Home</a>
             </h2>
-          </div>
-          <div>
-            @yield('nav')
-          </div>
+            <h2>
+              @yield('nav')
+            </h2>
         </div>
 
         <div>
